@@ -1,0 +1,21 @@
+---
+kind: pipeline
+name: publish
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    repo: pr0ger/drone-mypy
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+  when:
+    event:
+      exclude:
+      - pull_request
+
+trigger:
+  branch:
+  - master

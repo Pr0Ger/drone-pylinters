@@ -7,8 +7,7 @@ steps:
   image: plugins/docker
   settings:
     repo: pr0ger/drone-mypy
-    username:
-      from_secret: docker_username
+    username: pr0ger
     password:
       from_secret: docker_password
   when:

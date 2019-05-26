@@ -20,6 +20,7 @@ docker build \
 
 ```Shell
 docker run --rm \
+  -e PLUGIN_VERSION=0.701 \
   -e PLUGIN_STRICT=true \
   -e PLUGIN_PACKAGE=package_name \
   -v $(pwd):/drone/src \

@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
 import os
+import platform
+import re
 import subprocess
 import sys
 from importlib import import_module
 
 mypy_version = os.getenv("PLUGIN_VERSION")
-subprocess.check_call(
+result = subprocess.check_output(
     [
         sys.executable,
         "-m",
@@ -15,6 +17,10 @@ subprocess.check_call(
         f"mypy=={mypy_version}" if mypy_version else "mypy",
     ]
 )
+
+mypy_version = re.match(b"^Successfully installed mypy-(.+)$", result.split(b"\n")[-2]).group(1).decode("utf-8")
+
+print(f"-- Python {platform.python_version()}, mypy {mypy_version}")
 
 args = []
 

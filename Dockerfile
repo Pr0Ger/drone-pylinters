@@ -1,11 +1,12 @@
 FROM python:alpine
 
+COPY requirements.txt /
+
 RUN \
     apk add --no-cache --update build-base ca-certificates && \
-    pip install --no-cache-dir --upgrade mypy pip && \
-    pip uninstall --yes mypy && \
+    pip install --no-cache-dir --upgrade pip -rrequirements.txt && \
     apk del build-base
 
-ADD script.py .
+COPY script.sh find_packages.py /
 
-ENTRYPOINT ["/script.py"]
+ENTRYPOINT ["/script.sh"]

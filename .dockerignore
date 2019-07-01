@@ -1,1 +1,3 @@
-.drone.yml
+.*
+Dockerfile
+README.md

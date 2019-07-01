@@ -3,10 +3,15 @@ kind: pipeline
 name: publish
 
 steps:
+- name: lint
+  image: koalaman/shellcheck-alpine
+  commands:
+  - shellcheck *.sh
+
 - name: publish
   image: plugins/docker
   settings:
-    repo: pr0ger/drone-mypy
+    repo: pr0ger/drone-pylinters
     username: pr0ger
     password:
       from_secret: docker_password

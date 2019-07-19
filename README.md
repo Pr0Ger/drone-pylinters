@@ -26,3 +26,16 @@ docker run --rm \
   -w /drone/src \
   pr0ger/drone-pylinters
 ```
+
+From .drone.yml
+```yaml
+---
+kind: pipeline
+name: publish
+
+steps:
+- name: lint
+  image: pr0ger/drone-pylinters
+  settings:
+    linter: mypy
+```

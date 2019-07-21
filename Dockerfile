@@ -7,6 +7,6 @@ RUN \
     pip install --no-cache-dir --upgrade pip -rrequirements.txt && \
     apk del build-base
 
-COPY script.sh find_packages.py /
+COPY script.sh /
 
 ENTRYPOINT ["/script.sh"]

@@ -38,4 +38,5 @@ steps:
   image: pr0ger/drone-pylinters
   settings:
     linter: mypy
+    skip_packages: tests
 ```

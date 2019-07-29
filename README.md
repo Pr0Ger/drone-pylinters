@@ -5,6 +5,7 @@
 
 Drone Plugin for linting Python code. Supported linters:
 - [mypy](http://mypy.readthedocs.org/)
+- [pycodestyle](https://github.com/pycqa/pycodestyle)
 
 ## Docker
 

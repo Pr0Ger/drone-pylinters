@@ -1,9 +1,9 @@
-# drone-pylinters
+# drone-pytools
 
-[![Build Status](https://drone.pr0ger.dev/api/badges/Pr0Ger/drone-pylinters/status.svg)](https://drone.pr0ger.dev/Pr0Ger/drone-pylinters)
-[![Image size](https://images.microbadger.com/badges/image/pr0ger/drone-pylinters.svg)](https://microbadger.com/images/pr0ger/drone-pylinters)
+[![Build Status](https://drone.pr0ger.dev/api/badges/Pr0Ger/drone-pytools/status.svg)](https://drone.pr0ger.dev/Pr0Ger/drone-pytools)
+[![Image size](https://images.microbadger.com/badges/image/pr0ger/drone-pytools.svg)](https://microbadger.com/images/pr0ger/drone-pytools)
 
-Drone Plugin for linting Python code. Supported linters:
+Drone Plugin with various tools for working with Python code. List:
 - [mypy](http://mypy.readthedocs.org/)
 - [pycodestyle](https://github.com/pycqa/pycodestyle)
 
@@ -15,17 +15,17 @@ Build the Docker image with the following commands:
 docker build \
   --label org.label-schema.build-date=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
   --label org.label-schema.vcs-ref=$(git rev-parse --short HEAD) \
-  --tag pr0ger/drone-pylinters .
+  --tag pr0ger/drone-pytools .
 ```
 
 ## Usage
 
 ```Shell
 docker run --rm \
-  -e PLUGIN_LINTER=mypy \
+  -e PLUGIN_TOOL=mypy \
   -v $(pwd):/drone/src \
   -w /drone/src \
-  pr0ger/drone-pylinters
+  pr0ger/drone-pytools
 ```
 
 From .drone.yml
@@ -36,8 +36,8 @@ name: publish
 
 steps:
 - name: lint
-  image: pr0ger/drone-pylinters
+  image: pr0ger/drone-pytools
   settings:
-    linter: mypy
+    tool: mypy
     skip_packages: tests
 ```

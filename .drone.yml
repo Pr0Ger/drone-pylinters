@@ -11,7 +11,7 @@ steps:
 - name: publish
   image: plugins/docker
   settings:
-    repo: pr0ger/drone-pylinters
+    repo: pr0ger/drone-pytools
     username: pr0ger
     password:
       from_secret: docker_password

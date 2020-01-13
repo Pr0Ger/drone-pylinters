@@ -2,6 +2,7 @@
 
 [![Build Status](https://drone.pr0ger.dev/api/badges/Pr0Ger/drone-pytools/status.svg)](https://drone.pr0ger.dev/Pr0Ger/drone-pytools)
 [![Image size](https://images.microbadger.com/badges/image/pr0ger/drone-pytools.svg)](https://microbadger.com/images/pr0ger/drone-pytools)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPr0Ger%2Fdrone-pytools.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FPr0Ger%2Fdrone-pytools?ref=badge_shield)
 
 Drone Plugin with various tools for working with Python code. List:
 - [mypy](http://mypy.readthedocs.org/)
@@ -41,3 +42,7 @@ steps:
     tool: mypy
     skip_packages: tests
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FPr0Ger%2Fdrone-pytools.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FPr0Ger%2Fdrone-pytools?ref=badge_large)

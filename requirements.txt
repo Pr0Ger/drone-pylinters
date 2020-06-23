@@ -1,2 +1,2 @@
-mypy==0.781
+mypy==0.782
 pycodestyle==2.6.0
